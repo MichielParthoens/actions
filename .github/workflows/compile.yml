@@ -1,0 +1,22 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      
+name: Checkout Repository
+      uses: actions/checkout@v2
+
+      
+name: Build C/C++ Program
+      run: |
+        g++ hello_world.cpp -o helloworld
+      working-directory: ${{ github.workspace }}
+
+      
+name: Execute Program
+      run: |./hello_world
