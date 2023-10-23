@@ -8,15 +8,15 @@ jobs:
 
     steps:
       
-name: Checkout Repository
+- name: Checkout Repository
       uses: actions/checkout@v2
 
       
-name: Build C/C++ Program
+- name: Build C/C++ Program
       run: |
-        g++ hello_world.cpp -o helloworld
+        g++ hello_world.cpp -o hello_world
       working-directory: ${{ github.workspace }}
 
       
-name: Execute Program
+- name: Execute Program
       run: |./hello_world
